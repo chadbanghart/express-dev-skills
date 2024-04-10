@@ -1,6 +1,8 @@
-<%- include('../partials/html') %>
-<body>
+<%- include('../partials/header') %>
   <h3><%= skill.skill %></h3>
-  <h3>Posseses: <%= skill.has ? 'Yes' : 'No' %></h3>
-</body>
-</html>
+  <h3>Posseses Skill: <%= skill.has ? 'Yes' : 'No' %></h3>
+  <a href="/skills/<%= skill.id %>/edit">Edit Skill</a>
+  <form action="/skills/<%= skill.id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete Skill</button>
+  </form>
+<%- include('../partials/footer') %>
